@@ -4,6 +4,8 @@ require('./mongo/mongoose');
 const newdata = require('./mongo/schema');
 const path = require('path');
 const hbs = require('hbs');
+const port = process.env.PORT || 5000;
+
 
 
 app.set('view engine','hbs');
@@ -18,7 +20,7 @@ app.use(express.json());
 
 app.use(express.urlencoded({extended:false}));
 
-app.post('/',async (req,res)=>{
+app.post('/register',async (req,res)=>{
     try{
         console.log(req.body.name);
         const name = req.body.name;
@@ -43,4 +45,4 @@ app.post('/',async (req,res)=>{
     
 })
 
-app.listen(8000);
+app.listen(port);
