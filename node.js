@@ -20,7 +20,7 @@ app.use(express.json());
 
 app.use(express.urlencoded({extended:false}));
 
-app.post('/register',async (req,res)=>{
+app.post('/',async (req,res)=>{
     try{
         console.log(req.body.name);
         const name = req.body.name;
